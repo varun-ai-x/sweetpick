@@ -8,10 +8,12 @@ from typing import Optional, List
 try:
     from pydantic import BaseModel, Field
     from pydantic_settings import BaseSettings
+    from dotenv import load_dotenv
+    load_dotenv()
     PYDANTIC_AVAILABLE = True
 except ImportError:
     PYDANTIC_AVAILABLE = False
-    print("Warning: pydantic_settings not available, using basic config")
+    print("Warning: pydantic_settings or python-dotenv not available, using basic config")
 
 
 if PYDANTIC_AVAILABLE:
