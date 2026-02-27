@@ -8,6 +8,12 @@ import sys
 import json
 import uuid
 from datetime import datetime
+import os
+import sys
+
+# Add the project root to the Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from src.utils.config import get_settings
 from src.utils.logger import app_logger
 from src.data_collection.serpapi_collector import SerpAPICollector
